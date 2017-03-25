@@ -24,6 +24,7 @@
     "@types/node": "^7.0.5",
     "angular-mocks": "^1.6.1",
     "awesome-typescript-loader": "^3.0.0-beta.9",
+    "bourbon": "^4.3.3",
     "chalk": "^1.1.3",
     "copyfiles": "^1.0.0",
     "css-loader": "^0.25.0",

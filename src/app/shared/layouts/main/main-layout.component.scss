@@ -1,4 +1,6 @@
+@import "bourbon";
 .main-layout{
+  @include background(linear-gradient(white, cyan) left repeat);
   margin-top: 15px;
   &__banner{
     width: 400px;

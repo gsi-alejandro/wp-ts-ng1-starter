@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
+var bourbon = require('bourbon').includePaths;
 
 // var extractCSS = new ExtractTextPlugin('styles/[name].css');
 
@@ -61,7 +62,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/i,
-                loader: ExtractTextPlugin.extract(['css-loader','sass-loader'])
+                loader: ExtractTextPlugin.extract(['css-loader','sass-loader?includePaths[]=' + bourbon])
             },
             {
                 test: /\.css$/,
