@@ -1,0 +1,77 @@
+{
+  "name": "wp-ng1-ts-starter",
+  "version": "1.0.0",
+  "description": "Webpack Typescript Typescript Starter-Kit",
+  "main": "main.ts",
+  "scripts": {
+    "start": "webpack-dev-server --inline --port 1666",
+    "test": "jest",
+    "coverage": "rimraf coverage && npm test -- --coverage --no-cache",
+    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress"
+  },
+  "author": "gsi-alejandro",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/angular": "1.5.8",
+    "@types/angular-mocks": "^1.5.9",
+    "@types/angular-ui-router": "^1.1.36",
+    "@types/bootstrap": "^3.3.32",
+    "@types/core-js": "^0.9.35",
+    "@types/hammerjs": "^2.0.34",
+    "@types/jest": "^18.1.1",
+    "@types/jquery": "^2.0.40",
+    "@types/lodash": "^4.14.40",
+    "@types/node": "^7.0.5",
+    "angular-mocks": "^1.6.1",
+    "awesome-typescript-loader": "^3.0.0-beta.9",
+    "chalk": "^1.1.3",
+    "copyfiles": "^1.0.0",
+    "css-loader": "^0.25.0",
+    "expose-loader": "^0.7.3",
+    "extract-text-webpack-plugin": "^2.0.0",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.5",
+    "html-webpack-plugin": "^2.28.0",
+    "jest": "^19.0.2",
+    "node-sass": "^3.13.0",
+    "progress-bar-webpack-plugin": "^1.9.3",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.5.4",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "ts-jest": "^19.0.0",
+    "tslint": "^4.4.2",
+    "tslint-loader": "^3.4.2",
+    "typescript": "^2.1.5",
+    "url-loader": "^0.5.7",
+    "webpack": "2.2.0",
+    "webpack-dev-server": "^2.4.2",
+    "webpack-merge": "^2.4.0",
+    "webpack-notifier": "^1.5.0"
+  },
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-sanitize": "^1.6.1",
+    "angular-ui-router": "^0.3.2",
+    "bootstrap": "^3.3.5",
+    "core-js": "^2.4.1",
+    "hammerjs": "^2.0.8",
+    "jquery": "^3.1.1",
+    "lodash": "^4.17.2",
+    "moment": "^2.16.0",
+    "moment-range": "^3.0.3",
+    "ng1-decor": "0.0.4",
+    "webpack-material-design-icons": "^0.1.0"
+  },
+  "jest": {
+    "transform": {
+      ".(ts)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": ".*\\.spec\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ]
+  }
+}
