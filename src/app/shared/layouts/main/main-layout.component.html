@@ -2,21 +2,26 @@
     <header>
         <div class="container">
             <small-loading style="float: left;"></small-loading>
-            <a class="btn btn-primary" ui-sref="main.home"><i class="material-icons md-24">home</i></a>
+            <a class="btn main-layout__my-button" ui-sref="main.home"><i class="material-icons md-24">home</i></a>
             <a class="btn btn-danger" ui-sref="main.about"><i class="material-icons">face</i></a>
         </div>
     </header>
+
+    <div class="main-layout__triangles">
+        <div class="main-layout__arrow-left"></div>
+        <div class="main-layout__arrow-right"></div>
+
+        <div class="main-layout__arrow-down-left"></div>
+    </div>
 
     <img src="../../../../../public/images/img1.jpg" alt="" class="main-layout__banner">
 
     <section>
         <div class="container">
             <div class="row">
-
-                <main class="col-md-9">
+                <main class="col-md-12">
                     <ui-view/>
                 </main>
-
             </div>
         </div>
     </section>

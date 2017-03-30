@@ -1,0 +1,51 @@
+//
+// Variables
+// --------------------------------------------------
+
+//== Colors Definition
+
+$colors: (
+  'c-gray': #9e9e9e,
+  'c-white': #fff,
+  'c-green': #25aa73,
+  'c-black': #212121,
+  'c-red': #d20000,
+  'c-blue': #429fdd,
+  'c-placeholder': #666,
+);
+
+$popup: (
+  'confirmation':#008f9c,
+  'warning':#d20000,
+);
+
+//== Media queries breakpoints
+
+$extra-small-screen: 480px !default;
+$small-screen: 768px !default;
+$medium-screen: 992px !default;
+$large-screen: 1200px !default;
+
+$extra-small-screen-max:     ($small-screen - 1);
+$small-screen-max:           ($medium-screen - 1);
+$medium-screen-max:          ($large-screen - 1);
+
+//## Extra Small
+$xs-max: "only screen and (max-width : #{$extra-small-screen-max})" !default;
+
+//## Small
+$sm-only: "only screen and (min-width : #{$small-screen}) and (max-width : #{$small-screen-max})" !default;
+
+//## Medium
+$md-only: "only screen and (min-width : #{$medium-screen}) and (max-width : #{$medium-screen-max})" !default;
+
+//## Large
+$lg-min: "only screen and (min-width : #{$large-screen})" !default;
+
+//** How use
+
+// @media #{$xs-max} {
+
+//Code is here
+
+// }

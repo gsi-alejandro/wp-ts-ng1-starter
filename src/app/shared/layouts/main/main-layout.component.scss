@@ -1,10 +1,38 @@
+$output-bourbon-deprecation-warnings: false;
 @import "bourbon";
-.main-layout{
+@import "../../sass/helpers/helpers";
+@include block(main-layout) {
   @include background(linear-gradient(white, cyan) left repeat);
+
   margin-top: 15px;
-  &__banner{
+
+  @include element(banner) {
     width: 400px;
     margin: 15px auto;
     display: block;
+  }
+
+  @include element(my-button) {
+    @include button-variant-default(white, #8135b1, #8135b1);
+  }
+
+  @include element(triangles) {
+    @include align-items(center);
+    @include display(flex);
+    @include flex-direction(row);
+    @include justify-content(center);
+  }
+
+  @include element(arrow-left) {
+    @include triangle(200px 100px, yellowgreen, left);
+  }
+
+  @include element(arrow-right) {
+    margin: 5px;
+    @include triangle(200px 100px, yellowgreen, right);
+  }
+
+  @include element(arrow-down-left) {
+    @include triangle(200px 200px, yellowgreen lavender, down-left);
   }
 }

@@ -1,0 +1,124 @@
+$bem_separator_element: '__';
+$bem_separator_modifier: '--';
+
+@mixin block($bem_item) {
+  .#{$bem_item} {
+    @content;
+  }
+}
+
+@mixin element($bem_item) {
+  $bem_parent: &;
+  $bem_is_parent: str-index('#{$bem_parent}', '#{$bem_separator_modifier}');
+  @if $bem_is_parent != null {
+    $bem_parent_without_modifier: str-slice(#{$bem_parent}, 0, $bem_is_parent - 1);
+
+    #{$bem_parent_without_modifier}#{$bem_separator_element}#{$bem_item} {
+      @content;
+    }
+  }
+  @else {
+    @at-root {
+      #{&}#{$bem_separator_element}#{$bem_item} {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin modifier($bem_item) {
+  $bem_parent: &;
+  @at-root {
+    #{&}#{$bem_separator_modifier}#{$bem_item} {
+      @content;
+    }
+  }
+}
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+  box-shadow: $shadow;
+}
+
+@mixin button-variant-default($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  background-image: none;
+  border-color: $border;
+  outline: 0 none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &:focus,
+  &.focus {
+    color: $color;
+    background-color: darken($background, 5%);
+    border-color: darken($border, 5%);
+    outline: 0 none;
+  }
+
+  &:hover {
+    color: $color;
+    background-color: darken($background, 5%);
+    border-color: darken($border, 5%);
+    outline: 0 none;
+  }
+
+  &:active,
+  &.active,
+  .open > .dropdown-toggle {
+    color: $color;
+    background-color: darken($background, 5%);
+    border-color: darken($border, 5%);
+    outline: 0 none;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $color;
+      background-color: darken($background, 5%);
+      border-color: darken($border, 5%);
+      outline: 0 none;
+    }
+  }
+
+  &:active,
+  &.active,
+  .open > .dropdown-toggle {
+    background-image: none;
+    box-shadow: none;
+    outline: 0 none;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: $background;
+      border-color: $border;
+      outline: 0 none;
+    }
+  }
+
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+}
+
+@mixin input-placeholder($color) {
+  // Firefox
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+  &:-ms-input-placeholder { color: $color; } // Internet Explorer 10+
+  &::-webkit-input-placeholder { color: $color; } // Safari and Chrome
+  &:focus::-webkit-input-placeholder { color: transparent; }
+  &:focus:-moz-placeholder { color: transparent; }
+  &:focus:-ms-input-placeholder { color: transparent; }
+}

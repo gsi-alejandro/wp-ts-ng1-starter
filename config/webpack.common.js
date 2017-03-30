@@ -3,8 +3,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
 var bourbon = require('bourbon').includePaths;
-
-// var extractCSS = new ExtractTextPlugin('styles/[name].css');
+var StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
     entry: {       
@@ -87,6 +86,11 @@ module.exports = {
             jquery: 'jquery',
             'window.Jquery': "jquery",
             Hammer: "hammerjs/hammer"
+        }),
+
+        new StyleLintPlugin({
+            configFile: '.stylelintrc.json',
+            files: '**/*.scss'
         })
     ]
 };
